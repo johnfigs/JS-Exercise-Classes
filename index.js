@@ -162,7 +162,30 @@ class Airplane {
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
   */
- class Student {
+ class Student extends Lambdasian{
+   constructor(person){
+     super(person);
+     this.previousBackground = person.previousBackground;
+     this.className = person.className;
+     this.favSubjects = person.favSubjects;
+   }
+   listSubjects(){
+     let s = 'Loving';
+     for(let i = 0; i < this.favSubjects.length; i++){
+       if (i+1 >= this.favSubjects.length) {
+        s = s + this.favSubjects[i];
+       } else {
+        s = s + this.favSubjects[i] + ', ';
+       }
+     }
+     return s;
+   }
+   PRAssignment(subject) {
+    return `${this.name} has submitted a PR for ${subject}`;
+   }
+   sprintChallenge(subject) {
+    return `${this.name} has begun sprint challenge on ${subject}`;
+   }
      
  }
   
