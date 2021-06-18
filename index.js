@@ -203,7 +203,17 @@ class Airplane {
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
   */
  class ProjectManager extends Instructor{
-    
+    constructor(person){
+      super(person);
+      this.gradClassName = person.gradClassName;
+      this.favInstructor = person.favInstructor;
+    }
+    standUp(channel){
+      return `${this.name} announces ${channel}, @channel standy times!`;
+    }
+    debugsCode(student, subj){
+      return `${this.name} debugs ${student.name}'s code on ${subj}`;
+    }
  }
   /*
     STRETCH PROBLEM (no tests!)
